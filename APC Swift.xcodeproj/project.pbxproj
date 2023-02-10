@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		B04345942995383700941420 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345932995383700941420 /* main.swift */; };
+		B043459C2995390300941420 /* Kitura in Frameworks */ = {isa = PBXBuildFile; productRef = B043459B2995390300941420 /* Kitura */; };
+		B043459F2995396E00941420 /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = B043459E2995396E00941420 /* SwiftDotEnv */; };
+		B04345A12995399B00941420 /* Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345A02995399B00941420 /* Configure.swift */; };
+		B04345A329953B1000941420 /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345A229953B1000941420 /* Processor.swift */; };
+		B04345A5299609A200941420 /* HandleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345A4299609A200941420 /* HandleRequest.swift */; };
+		B04345A72996192F00941420 /* RouterRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345A62996192F00941420 /* RouterRequestExtension.swift */; };
+		B04345A929961DF600941420 /* RuntimeConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345A829961DF600941420 /* RuntimeConfigure.swift */; };
+		B04345AB29962EF900941420 /* ResponseConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345AA29962EF900941420 /* ResponseConstructor.swift */; };
+		B04345AD2996306800941420 /* ParseLocalFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345AC2996306800941420 /* ParseLocalFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +34,13 @@
 /* Begin PBXFileReference section */
 		B04345902995383700941420 /* APC Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "APC Swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B04345932995383700941420 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B04345A02995399B00941420 /* Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configure.swift; sourceTree = "<group>"; };
+		B04345A229953B1000941420 /* Processor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processor.swift; sourceTree = "<group>"; };
+		B04345A4299609A200941420 /* HandleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleRequest.swift; sourceTree = "<group>"; };
+		B04345A62996192F00941420 /* RouterRequestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterRequestExtension.swift; sourceTree = "<group>"; };
+		B04345A829961DF600941420 /* RuntimeConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeConfigure.swift; sourceTree = "<group>"; };
+		B04345AA29962EF900941420 /* ResponseConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseConstructor.swift; sourceTree = "<group>"; };
+		B04345AC2996306800941420 /* ParseLocalFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseLocalFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B043459F2995396E00941420 /* SwiftDotEnv in Frameworks */,
+				B043459C2995390300941420 /* Kitura in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +76,13 @@
 			isa = PBXGroup;
 			children = (
 				B04345932995383700941420 /* main.swift */,
+				B04345A02995399B00941420 /* Configure.swift */,
+				B04345A229953B1000941420 /* Processor.swift */,
+				B04345A4299609A200941420 /* HandleRequest.swift */,
+				B04345A62996192F00941420 /* RouterRequestExtension.swift */,
+				B04345A829961DF600941420 /* RuntimeConfigure.swift */,
+				B04345AA29962EF900941420 /* ResponseConstructor.swift */,
+				B04345AC2996306800941420 /* ParseLocalFile.swift */,
 			);
 			path = "APC Swift";
 			sourceTree = "<group>";
@@ -78,6 +103,10 @@
 			dependencies = (
 			);
 			name = "APC Swift";
+			packageProductDependencies = (
+				B043459B2995390300941420 /* Kitura */,
+				B043459E2995396E00941420 /* SwiftDotEnv */,
+			);
 			productName = "APC Swift";
 			productReference = B04345902995383700941420 /* APC Swift */;
 			productType = "com.apple.product-type.tool";
@@ -106,6 +135,10 @@
 				Base,
 			);
 			mainGroup = B04345872995383700941420;
+			packageReferences = (
+				B043459A2995390300941420 /* XCRemoteSwiftPackageReference "Kitura" */,
+				B043459D2995396E00941420 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */,
+			);
 			productRefGroup = B04345912995383700941420 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -120,7 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B04345A329953B1000941420 /* Processor.swift in Sources */,
+				B04345A72996192F00941420 /* RouterRequestExtension.swift in Sources */,
+				B04345A12995399B00941420 /* Configure.swift in Sources */,
+				B04345AB29962EF900941420 /* ResponseConstructor.swift in Sources */,
+				B04345A929961DF600941420 /* RuntimeConfigure.swift in Sources */,
+				B04345AD2996306800941420 /* ParseLocalFile.swift in Sources */,
 				B04345942995383700941420 /* main.swift in Sources */,
+				B04345A5299609A200941420 /* HandleRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +324,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B043459A2995390300941420 /* XCRemoteSwiftPackageReference "Kitura" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/Kitura";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		B043459D2995396E00941420 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftOnTheServer/SwiftDotEnv";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B043459B2995390300941420 /* Kitura */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B043459A2995390300941420 /* XCRemoteSwiftPackageReference "Kitura" */;
+			productName = Kitura;
+		};
+		B043459E2995396E00941420 /* SwiftDotEnv */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B043459D2995396E00941420 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */;
+			productName = SwiftDotEnv;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B04345882995383700941420 /* Project object */;
 }
