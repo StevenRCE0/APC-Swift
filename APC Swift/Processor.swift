@@ -27,7 +27,9 @@ func replaceSection(string: String, newString: String, section: String) -> Strin
 }
 
 func sectionLinearProcessor(string: String, section: String, method: LinearMethod) -> String? {
-    let lines = string.split(separator: /\n/)
+    let lines = string.split(whereSeparator: \.isNewline)
+    let nextSectionPattern = "^\\[.+]$"
+    let regEx = try? NSRegularExpression(pattern: nextSectionPattern, options: .caseInsensitive)
     var i = 0
     while i < lines.count {
         if lines[i].trimmingCharacters(in: .whitespaces) == "[\(section)]" {
@@ -40,7 +42,7 @@ func sectionLinearProcessor(string: String, section: String, method: LinearMetho
                 if lines[i] == "" {
                     return false
                 }
-                if !lines[i].matches(of: /^\[.+]$/).isEmpty {
+                if !(regEx?.matches(in: String(lines[i]), range: .init(location: 0, length: lines[i].count)).isEmpty ?? false) {
                     return false
                 }
                 return true

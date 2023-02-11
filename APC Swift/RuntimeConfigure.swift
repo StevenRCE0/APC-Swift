@@ -28,7 +28,7 @@ func parseRuntimeConfiguration(request: RouterRequest) throws -> RuntimeParams {
     
     if fileEnvKey != nil {
         if let filePathString = getEnvironmentVariable(fileEnvKey) {
-            file = URL(filePath: filePathString)
+            file = URL(fileURLWithPath: filePathString)
         } else {
             throw RuntimeConfigError.FileNotInEnv(name: fileEnvKey!)
         }

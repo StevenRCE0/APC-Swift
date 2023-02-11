@@ -64,7 +64,7 @@ func getEnvironmentVariableInt(_ unsafeName: String? = nil) -> Int? {
 func loadConfiguration() -> Configuration {
     var defaultFilePath: URL? {
         if let defaultFileString = getEnvironmentVariable("FILE") {
-            return URL(filePath: defaultFileString)
+            return URL(fileURLWithPath: defaultFileString)
         }
         return nil
     }
