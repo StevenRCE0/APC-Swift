@@ -8,7 +8,7 @@
 import Foundation
 import Kitura
 
-func parseLocalFile(_ targetContent: inout String, _ runtimeConfiguration: RuntimeParams, _ response: RouterResponse, _ next: () -> Void) {
+func parseLocalFile(_ targetContent: inout String, _ runtimeConfiguration: RuntimeConfiguration, _ response: RouterResponse, _ next: () -> Void) {
     if let localURL = runtimeConfiguration.file ?? configuration.defaultFilePath {
         do {
             targetContent = String(data: try Data(contentsOf: localURL), encoding: .utf8) ?? ""

@@ -17,6 +17,18 @@
 		B04345A929961DF600941420 /* RuntimeConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345A829961DF600941420 /* RuntimeConfigure.swift */; };
 		B04345AB29962EF900941420 /* ResponseConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345AA29962EF900941420 /* ResponseConstructor.swift */; };
 		B04345AD2996306800941420 /* ParseLocalFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345AC2996306800941420 /* ParseLocalFile.swift */; };
+		B084F55F299784C30070FFDA /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345A229953B1000941420 /* Processor.swift */; };
+		B084F56129979D2B0070FFDA /* ProcessorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B084F56029979D2B0070FFDA /* ProcessorTest.swift */; };
+		B084F56329979DC00070FFDA /* ManagedRegExTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B084F56229979DC00070FFDA /* ManagedRegExTest.swift */; };
+		B084F56429979ECF0070FFDA /* ResponseConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345AA29962EF900941420 /* ResponseConstructor.swift */; };
+		B084F56529979F030070FFDA /* RuntimeConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345A829961DF600941420 /* RuntimeConfigure.swift */; };
+		B084F5682997A0420070FFDA /* Kitura in Frameworks */ = {isa = PBXBuildFile; productRef = B084F5672997A0420070FFDA /* Kitura */; };
+		B084F5692997A08F0070FFDA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345932995383700941420 /* main.swift */; };
+		B084F56A2997A0920070FFDA /* Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345A02995399B00941420 /* Configure.swift */; };
+		B084F56B2997A0960070FFDA /* HandleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345A4299609A200941420 /* HandleRequest.swift */; };
+		B084F56C2997A09A0070FFDA /* RouterRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345A62996192F00941420 /* RouterRequestExtension.swift */; };
+		B084F56D2997A0A10070FFDA /* ParseLocalFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345AC2996306800941420 /* ParseLocalFile.swift */; };
+		B084F56F2997A0BB0070FFDA /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = B084F56E2997A0BB0070FFDA /* SwiftDotEnv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +53,9 @@
 		B04345A829961DF600941420 /* RuntimeConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeConfigure.swift; sourceTree = "<group>"; };
 		B04345AA29962EF900941420 /* ResponseConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseConstructor.swift; sourceTree = "<group>"; };
 		B04345AC2996306800941420 /* ParseLocalFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseLocalFile.swift; sourceTree = "<group>"; };
+		B084F557299783020070FFDA /* APC Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "APC Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B084F56029979D2B0070FFDA /* ProcessorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessorTest.swift; sourceTree = "<group>"; };
+		B084F56229979DC00070FFDA /* ManagedRegExTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedRegExTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +68,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B084F554299783020070FFDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B084F56F2997A0BB0070FFDA /* SwiftDotEnv in Frameworks */,
+				B084F5682997A0420070FFDA /* Kitura in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -60,7 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				B04345922995383700941420 /* APC Swift */,
+				B084F558299783020070FFDA /* APC Test */,
 				B04345912995383700941420 /* Products */,
+				B084F5662997A0420070FFDA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				B04345902995383700941420 /* APC Swift */,
+				B084F557299783020070FFDA /* APC Test.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +112,22 @@
 				B04345AC2996306800941420 /* ParseLocalFile.swift */,
 			);
 			path = "APC Swift";
+			sourceTree = "<group>";
+		};
+		B084F558299783020070FFDA /* APC Test */ = {
+			isa = PBXGroup;
+			children = (
+				B084F56029979D2B0070FFDA /* ProcessorTest.swift */,
+				B084F56229979DC00070FFDA /* ManagedRegExTest.swift */,
+			);
+			path = "APC Test";
+			sourceTree = "<group>";
+		};
+		B084F5662997A0420070FFDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,6 +154,27 @@
 			productReference = B04345902995383700941420 /* APC Swift */;
 			productType = "com.apple.product-type.tool";
 		};
+		B084F556299783020070FFDA /* APC Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B084F55D299783020070FFDA /* Build configuration list for PBXNativeTarget "APC Test" */;
+			buildPhases = (
+				B084F553299783020070FFDA /* Sources */,
+				B084F554299783020070FFDA /* Frameworks */,
+				B084F555299783020070FFDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "APC Test";
+			packageProductDependencies = (
+				B084F5672997A0420070FFDA /* Kitura */,
+				B084F56E2997A0BB0070FFDA /* SwiftDotEnv */,
+			);
+			productName = "APC Test";
+			productReference = B084F557299783020070FFDA /* APC Test.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -122,6 +186,9 @@
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					B043458F2995383700941420 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					B084F556299783020070FFDA = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -144,9 +211,20 @@
 			projectRoot = "";
 			targets = (
 				B043458F2995383700941420 /* APC Swift */,
+				B084F556299783020070FFDA /* APC Test */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B084F555299783020070FFDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B043458C2995383700941420 /* Sources */ = {
@@ -161,6 +239,23 @@
 				B04345AD2996306800941420 /* ParseLocalFile.swift in Sources */,
 				B04345942995383700941420 /* main.swift in Sources */,
 				B04345A5299609A200941420 /* HandleRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B084F553299783020070FFDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B084F56129979D2B0070FFDA /* ProcessorTest.swift in Sources */,
+				B084F56D2997A0A10070FFDA /* ParseLocalFile.swift in Sources */,
+				B084F56C2997A09A0070FFDA /* RouterRequestExtension.swift in Sources */,
+				B084F56429979ECF0070FFDA /* ResponseConstructor.swift in Sources */,
+				B084F56A2997A0920070FFDA /* Configure.swift in Sources */,
+				B084F56B2997A0960070FFDA /* HandleRequest.swift in Sources */,
+				B084F5692997A08F0070FFDA /* main.swift in Sources */,
+				B084F55F299784C30070FFDA /* Processor.swift in Sources */,
+				B084F56529979F030070FFDA /* RuntimeConfigure.swift in Sources */,
+				B084F56329979DC00070FFDA /* ManagedRegExTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +399,38 @@
 			};
 			name = Release;
 		};
+		B084F55B299783020070FFDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T57PLMJKEL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "rcex.APC-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B084F55C299783020070FFDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T57PLMJKEL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "rcex.APC-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -321,6 +448,15 @@
 			buildConfigurations = (
 				B04345982995383700941420 /* Debug */,
 				B04345992995383700941420 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B084F55D299783020070FFDA /* Build configuration list for PBXNativeTarget "APC Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B084F55B299783020070FFDA /* Debug */,
+				B084F55C299783020070FFDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -353,6 +489,16 @@
 			productName = Kitura;
 		};
 		B043459E2995396E00941420 /* SwiftDotEnv */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B043459D2995396E00941420 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */;
+			productName = SwiftDotEnv;
+		};
+		B084F5672997A0420070FFDA /* Kitura */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B043459A2995390300941420 /* XCRemoteSwiftPackageReference "Kitura" */;
+			productName = Kitura;
+		};
+		B084F56E2997A0BB0070FFDA /* SwiftDotEnv */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B043459D2995396E00941420 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */;
 			productName = SwiftDotEnv;

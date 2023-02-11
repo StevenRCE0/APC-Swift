@@ -9,7 +9,7 @@ import Foundation
 import Kitura
 
 
-func beginRequest(_ targetContent: inout String, _ response: RouterResponse, _ request: RouterRequest, _ next: () -> Void, _ data: Data?, _ remoteResp: URLResponse?, _ runtimeConfiguration: RuntimeParams, _ error: Error?) {
+func beginRequest(_ targetContent: inout String, _ response: RouterResponse, _ request: RouterRequest, _ next: () -> Void, _ data: Data?, _ remoteResp: URLResponse?, _ runtimeConfiguration: RuntimeConfiguration, _ error: Error?) {
     if data == nil {
         handleServerError(response: response, next: next)
         return

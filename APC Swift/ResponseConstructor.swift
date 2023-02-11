@@ -8,9 +8,9 @@
 import Foundation
 import Kitura
 
-func responseConstructor(_ response: RouterResponse, _ next: () -> Void, _ request: RouterRequest, _ targetContent: inout String, _ remoteContent: String, _ runtimeConfiguration: RuntimeParams) {
+func responseConstructor(_ response: RouterResponse, _ next: () -> Void, _ request: RouterRequest, _ targetContent: inout String, _ remoteContent: String, _ runtimeConfiguration: RuntimeConfiguration) {
     
-    //    Actual replacing
+//    Actual replacing
     for segment in runtimeConfiguration.replacing {
         if let newString = readSection(string: remoteContent, section: segment) {
             targetContent = replaceSection(string: targetContent, newString: newString, section: segment)
@@ -19,9 +19,17 @@ func responseConstructor(_ response: RouterResponse, _ next: () -> Void, _ reque
         }
     }
     
-    //    Append MANAGED info
-    var managedText: String {
-        return "#!MANAGED-CONFIG \(request.originalURL)\n"
+//    Append MANAGED info
+    targetContent = getManagedText(request.originalURL, runtimeConfiguration) + targetContent
+}
+
+func getManagedText(_ url: String, _ runtimeConfiguration: RuntimeConfiguration) -> String {
+    let protocolPattern = "^http(s?)"
+    var urlString = url
+    
+    if runtimeConfiguration.sslOverride != nil {
+        urlString = urlString.replacingOccurrences(of: protocolPattern, with: runtimeConfiguration.sslOverride! ? "https" : "http", options: .regularExpression)
     }
-    targetContent = managedText + targetContent
+    
+    return "#!MANAGED-CONFIG \(urlString)\n"
 }

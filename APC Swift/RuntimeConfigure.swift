@@ -9,11 +9,12 @@ import Foundation
 import Kitura
 
 
-struct RuntimeParams {
+struct RuntimeConfiguration {
     let file: URL?
     let replacing: [String]
+    let sslOverride: Bool?
     static let replacingKeyword = "replacing"
-    static let sslKeywords = ["sslon": true, "ssloff": false]
+    static let sslKeyword = "ssl"
     static let pathKeywords = ["PORT", "URL", "FILE", "HTTPS"]
 }
 
@@ -21,9 +22,15 @@ enum RuntimeConfigError: Error {
     case FileNotInEnv(name: String)
 }
 
-func parseRuntimeConfiguration(request: RouterRequest) throws -> RuntimeParams {
+func parseRuntimeConfiguration(request: RouterRequest) throws -> RuntimeConfiguration {
     var file = configuration.defaultFilePath
-    let replacing: [String] = request.queryParametersMultiValues[RuntimeParams.replacingKeyword] ?? []
+    let replacing: [String] = request.queryParametersMultiValues[RuntimeConfiguration.replacingKeyword] ?? []
+    var sslOverride: Bool? {
+        if let string = request.queryParameters[RuntimeConfiguration.sslKeyword] {
+            return string == "true" || string == "1"
+        }
+        return nil
+    }
     let fileEnvKey = request.routes.first
     
     if fileEnvKey != nil {
@@ -33,13 +40,13 @@ func parseRuntimeConfiguration(request: RouterRequest) throws -> RuntimeParams {
             throw RuntimeConfigError.FileNotInEnv(name: fileEnvKey!)
         }
     }
-    return .init(file: file, replacing: replacing)
+    return .init(file: file, replacing: replacing, sslOverride: sslOverride)
 }
 
 func checkKeywords(request: RouterRequest) -> [String] {
     var conflicts: [String] = []
     for route in request.routes {
-        if RuntimeParams.pathKeywords.contains(route) {
+        if RuntimeConfiguration.pathKeywords.contains(route) {
             conflicts.append(route)
         }
     }
