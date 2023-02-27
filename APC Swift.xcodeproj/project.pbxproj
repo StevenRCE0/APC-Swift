@@ -44,6 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B02707F829AC4C4E00897922 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B04345902995383700941420 /* APC Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "APC Swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B04345932995383700941420 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B04345A02995399B00941420 /* Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configure.swift; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		B04345872995383700941420 = {
 			isa = PBXGroup;
 			children = (
+				B02707F829AC4C4E00897922 /* README.md */,
 				B04345922995383700941420 /* APC Swift */,
 				B084F558299783020070FFDA /* APC Test */,
 				B04345912995383700941420 /* Products */,
