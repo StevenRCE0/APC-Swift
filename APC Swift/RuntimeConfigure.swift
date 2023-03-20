@@ -13,7 +13,7 @@ struct RuntimeConfiguration {
     let file: URL?
     let replacing: [String]
     let sslOverride: Bool?
-    static let replacingKeyword = "replacing"
+    static let replacingKeyword = "replace"
     static let sslKeyword = "ssl"
     static let pathKeywords = ["PORT", "URL", "FILE", "HTTPS"]
 }
