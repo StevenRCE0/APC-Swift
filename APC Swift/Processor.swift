@@ -39,7 +39,7 @@ func sectionLinearProcessor(string: String, section: String, method: LinearMetho
                 if i >= lines.count {
                     return false
                 }
-                if lines[i] == "" {
+                if i - start > 1 && lines[i] == "" {
                     return false
                 }
                 if !(regEx?.matches(in: String(lines[i]), range: .init(location: 0, length: lines[i].count)).isEmpty ?? false) {
