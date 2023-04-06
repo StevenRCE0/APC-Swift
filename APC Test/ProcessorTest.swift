@@ -23,7 +23,6 @@ text
 sth
 """
     let toRead = """
-[toReplace]
 old
 text
 """
@@ -34,22 +33,27 @@ text
     
     let replacedCheck = """
 sth
+
 [toReplace]
 new
 text
+
 [notToReplace]
 fine
 text
+
 sth
 """
     
     func testRead() throws {
         let read = readSection(string: testText, section: "toReplace")!
+        print(read)
         XCTAssert(read == toRead, "Read error")
     }
     
     func testReplace() throws {
         let replaced = replaceSection(string: testText, newString: replaceWith, section: "toReplace")
+        print(replaced)
         XCTAssert(replaced == replacedCheck, "Replace error")
     }
 }

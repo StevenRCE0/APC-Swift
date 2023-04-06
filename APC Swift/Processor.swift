@@ -11,7 +11,7 @@ typealias LinearMethod = ([String.SubSequence], Int, Int) -> String
 
 func readSection(string: String, section: String) -> String? {
     let method: LinearMethod = { sequence, start, end in
-        sequence[start..<end].joined(separator: "\n")
+        sequence[start + 1..<end].joined(separator: "\n")
     }
     return sectionLinearProcessor(string: string, section: section, method: method)
 }
@@ -48,7 +48,7 @@ func sectionLinearProcessor(string: String, section: String, method: LinearMetho
                 i += 1
             }
             let end = i
-            return method(lines, start, end)
+            return method(lines, start, end - 1)
         }
         i += 1
     }
