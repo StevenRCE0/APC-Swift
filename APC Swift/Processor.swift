@@ -11,14 +11,14 @@ typealias LinearMethod = ([String.SubSequence], Int, Int) -> String
 
 func readSection(string: String, section: String) -> String? {
     let method: LinearMethod = { sequence, start, end in
-        sequence[start + 1..<end].joined(separator: "\n")
+        sequence[start..<end].joined(separator: "\n")
     }
     return sectionLinearProcessor(string: string, section: section, method: method)
 }
 
 func replaceSection(string: String, newString: String, section: String) -> String {
     let method: LinearMethod = { sequence, start, end in
-        let firstSegment: [String] = sequence[0...start].compactMap({String($0)})
+        let firstSegment: [String] = sequence[0..<start].compactMap({String($0)})
         let endSegment: [String] = sequence[end...].compactMap({String($0)})
         let joined = firstSegment + [newString] + endSegment
         return joined.joined(separator: "\n")
@@ -28,13 +28,13 @@ func replaceSection(string: String, newString: String, section: String) -> Strin
 
 func sectionLinearProcessor(string: String, section: String, method: LinearMethod) -> String? {
     let lines = string.split(omittingEmptySubsequences: false, whereSeparator: \.isNewline)
-    let nextSectionPattern = "^\\[.+]$"
+    let nextSectionPattern = "^\\s*\\[.+\\]\\s*$"
     let regEx = try? NSRegularExpression(pattern: nextSectionPattern, options: .caseInsensitive)
     var i = 0
     while i < lines.count {
         if lines[i].trimmingCharacters(in: .whitespaces) == "[\(section)]" {
-            let start = i
             i += 1
+            let start = i
             var condition: Bool {
                 if i >= lines.count {
                     return false
@@ -48,7 +48,7 @@ func sectionLinearProcessor(string: String, section: String, method: LinearMetho
                 i += 1
             }
             let end = i
-            return method(lines, start, end - 1)
+            return method(lines, start, end)
         }
         i += 1
     }

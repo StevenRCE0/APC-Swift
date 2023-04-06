@@ -12,11 +12,11 @@ final class ProcessorTest: XCTestCase {
     let testText = """
 sth
 
-[toReplace]
+[Proxy]
 old
 text
 
-[notToReplace]
+[Proxy Group]
 fine
 text
 
@@ -34,11 +34,11 @@ text
     let replacedCheck = """
 sth
 
-[toReplace]
+[Proxy]
 new
 text
 
-[notToReplace]
+[Proxy Group]
 fine
 text
 
@@ -46,13 +46,13 @@ sth
 """
     
     func testRead() throws {
-        let read = readSection(string: testText, section: "toReplace")!
+        let read = readSection(string: testText, section: "Proxy")!
         print(read)
         XCTAssert(read == toRead, "Read error")
     }
     
     func testReplace() throws {
-        let replaced = replaceSection(string: testText, newString: replaceWith, section: "toReplace")
+        let replaced = replaceSection(string: testText, newString: replaceWith, section: "Proxy")
         print(replaced)
         XCTAssert(replaced == replacedCheck, "Replace error")
     }

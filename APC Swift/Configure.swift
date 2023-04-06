@@ -15,6 +15,7 @@ struct Configuration {
     let SSL: Bool
     let url: URL
     let defaultFilePath: URL?
+    let secret: String?
 }
 
 func getEnvironmentVariable(_ unsafeName: String? = nil) -> String? {
@@ -72,6 +73,7 @@ func loadConfiguration() -> Configuration {
         port: getEnvironmentVariableInt("PORT") ?? 8080,
         SSL: getEnvironmentVariable("HTTPS") == "true",
         url: URL(string: getEnvironmentVariable("URL")!)!,
-        defaultFilePath: defaultFilePath
+        defaultFilePath: defaultFilePath,
+        secret: getEnvironmentVariable("SECRET")
     )
 }
