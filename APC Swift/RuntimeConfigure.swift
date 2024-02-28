@@ -13,8 +13,10 @@ struct RuntimeConfiguration {
     let file: URL?
     let replacing: [String]
     let sslOverride: Bool?
+    let secret: String?
     static let replacingKeyword = "replace"
     static let sslKeyword = "ssl"
+    static let secretKeyword = "secret"
     static let pathKeywords = ["PORT", "URL", "FILE", "HTTPS"]
 }
 
@@ -32,6 +34,7 @@ func parseRuntimeConfiguration(request: RouterRequest) throws -> RuntimeConfigur
         return nil
     }
     let fileEnvKey = request.routes.first
+    let secret = request.queryParameters[RuntimeConfiguration.secretKeyword]
     
     if fileEnvKey != nil {
         if let filePathString = getEnvironmentVariable(fileEnvKey) {
@@ -40,7 +43,7 @@ func parseRuntimeConfiguration(request: RouterRequest) throws -> RuntimeConfigur
             throw RuntimeConfigError.FileNotInEnv(name: fileEnvKey!)
         }
     }
-    return .init(file: file, replacing: replacing, sslOverride: sslOverride)
+    return .init(file: file, replacing: replacing, sslOverride: sslOverride, secret: secret)
 }
 
 func checkKeywords(request: RouterRequest) -> [String] {

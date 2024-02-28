@@ -10,6 +10,10 @@ import Kitura
 
 
 func beginRequest(_ targetContent: inout String, _ response: RouterResponse, _ request: RouterRequest, _ next: () -> Void, _ data: Data?, _ remoteResp: URLResponse?, _ runtimeConfiguration: RuntimeConfiguration, _ error: Error?) {
+    if configuration.secret != nil && configuration.secret != runtimeConfiguration.secret {
+        handleSecretError(response: response, next: next)
+        return
+    }
     if data == nil {
         handleServerError(response: response, next: next)
         return
@@ -31,12 +35,14 @@ func beginRequest(_ targetContent: inout String, _ response: RouterResponse, _ r
     next()
 }
 
-func handleTaskError(response: RouterResponse, next: () -> Void) {
-    response.send("fetched nothing")
+func handleSecretError(response: RouterResponse, next: () -> Void) {
+    response.send("bad secret")
+    response.statusCode = .badRequest
     next()
 }
 
 func handleServerError(response: RouterResponse, next: () -> Void) {
     response.send("fetched nothing")
+    response.statusCode = .badGateway
     next()
 }
