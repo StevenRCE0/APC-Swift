@@ -13,6 +13,22 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - name: Update Xcode Version
+        uses: JosephDuffy/update-xcode-version-action@v0.2.0
+        with:
+          # The path to a .yml file that describes which versions should be applied to which files.
+          xcode-versions-file: .github/xcode-versions.yml
+          # The path to search for Xcode versions in.
+          xcode-search-path: /Applications
+          # If provided will create a pull request with the changes.
+          # github-token: # optional
+          # If provided will generate a badge at the provided path.
+          # xcode-version-badge-path: # optional
+          # The version(s) to display in the generated badge. Provide multiple versions by separating with commas.
+          # xcode-version-badge-versions: # optional, default is latest
+          # 
+          # quotes: # optional, default is double
+          
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set Default Scheme
