@@ -1,0 +1,8 @@
+workflows:
+  workflows/xcode.yml:
+    jobs:
+      release:
+        strategy:
+          matrix:
+            xcode:
+              - latest
