@@ -3,9 +3,9 @@ name: Xcode - Build and Analyze
 on:
   workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   update-xcode-versions:
@@ -27,21 +27,22 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        xcode: ["15.2"]
+        xcode:
+          - "14.2"
     steps:
       - name: Select Xcode ${{ matrix.xcode }}
         run: sudo xcode-select --switch /Applications/Xcode_${{ matrix.xcode }}.app
-        
+
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Set Default Scheme
         run: |
           scheme_list=$(xcodebuild -list -json | tr -d "\n")
           default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
           echo $default | cat >default
           echo Using default scheme: $default
-          
+
       - name: Build
         env:
           scheme: ${{ 'default' }}
