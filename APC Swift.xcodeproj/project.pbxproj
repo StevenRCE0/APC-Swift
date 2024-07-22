@@ -29,6 +29,10 @@
 		B084F56C2997A09A0070FFDA /* RouterRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345A62996192F00941420 /* RouterRequestExtension.swift */; };
 		B084F56D2997A0A10070FFDA /* ParseLocalFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04345AC2996306800941420 /* ParseLocalFile.swift */; };
 		B084F56F2997A0BB0070FFDA /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = B084F56E2997A0BB0070FFDA /* SwiftDotEnv */; };
+		B0A020832BAC58B600BE2EA0 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A020822BAC58B600BE2EA0 /* Modifiers.swift */; };
+		B0A020842BAC58B600BE2EA0 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A020822BAC58B600BE2EA0 /* Modifiers.swift */; };
+		B0A020862BAC655900BE2EA0 /* ModifiersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A020852BAC655900BE2EA0 /* ModifiersTest.swift */; };
+		B0A020872BAC655900BE2EA0 /* ModifiersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A020852BAC655900BE2EA0 /* ModifiersTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +60,8 @@
 		B084F557299783020070FFDA /* APC Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "APC Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B084F56029979D2B0070FFDA /* ProcessorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessorTest.swift; sourceTree = "<group>"; };
 		B084F56229979DC00070FFDA /* ManagedRegExTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedRegExTest.swift; sourceTree = "<group>"; };
+		B0A020822BAC58B600BE2EA0 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		B0A020852BAC655900BE2EA0 /* ModifiersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiersTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 				B04345A829961DF600941420 /* RuntimeConfigure.swift */,
 				B04345AA29962EF900941420 /* ResponseConstructor.swift */,
 				B04345AC2996306800941420 /* ParseLocalFile.swift */,
+				B0A020822BAC58B600BE2EA0 /* Modifiers.swift */,
 			);
 			path = "APC Swift";
 			sourceTree = "<group>";
@@ -119,6 +126,7 @@
 			children = (
 				B084F56029979D2B0070FFDA /* ProcessorTest.swift */,
 				B084F56229979DC00070FFDA /* ManagedRegExTest.swift */,
+				B0A020852BAC655900BE2EA0 /* ModifiersTest.swift */,
 			);
 			path = "APC Test";
 			sourceTree = "<group>";
@@ -183,7 +191,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					B043458F2995383700941420 = {
 						CreatedOnToolsVersion = 14.2;
@@ -233,7 +241,9 @@
 			files = (
 				B04345A329953B1000941420 /* Processor.swift in Sources */,
 				B04345A72996192F00941420 /* RouterRequestExtension.swift in Sources */,
+				B0A020832BAC58B600BE2EA0 /* Modifiers.swift in Sources */,
 				B04345A12995399B00941420 /* Configure.swift in Sources */,
+				B0A020862BAC655900BE2EA0 /* ModifiersTest.swift in Sources */,
 				B04345AB29962EF900941420 /* ResponseConstructor.swift in Sources */,
 				B04345A929961DF600941420 /* RuntimeConfigure.swift in Sources */,
 				B04345AD2996306800941420 /* ParseLocalFile.swift in Sources */,
@@ -250,11 +260,13 @@
 				B084F56D2997A0A10070FFDA /* ParseLocalFile.swift in Sources */,
 				B084F56C2997A09A0070FFDA /* RouterRequestExtension.swift in Sources */,
 				B084F56429979ECF0070FFDA /* ResponseConstructor.swift in Sources */,
+				B0A020872BAC655900BE2EA0 /* ModifiersTest.swift in Sources */,
 				B084F56A2997A0920070FFDA /* Configure.swift in Sources */,
 				B084F56B2997A0960070FFDA /* HandleRequest.swift in Sources */,
 				B084F5692997A08F0070FFDA /* main.swift in Sources */,
 				B084F55F299784C30070FFDA /* Processor.swift in Sources */,
 				B084F56529979F030070FFDA /* RuntimeConfigure.swift in Sources */,
+				B0A020842BAC58B600BE2EA0 /* Modifiers.swift in Sources */,
 				B084F56329979DC00070FFDA /* ManagedRegExTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,9 +307,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -355,9 +369,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -379,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = T57PLMJKEL;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
@@ -391,6 +408,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = T57PLMJKEL;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
@@ -404,6 +422,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = T57PLMJKEL;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
@@ -420,6 +439,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = T57PLMJKEL;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.4;

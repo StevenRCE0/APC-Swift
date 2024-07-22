@@ -54,3 +54,21 @@ func sectionLinearProcessor(string: String, section: String, method: LinearMetho
     }
     return nil
 }
+
+
+func applyModifiers(newString: String, targetContent: inout String, modifiers: ModifiersResult) {
+    if modifiers.toRemove.isEmpty && modifiers.toReplace.isEmpty && modifiers.toInsert.isEmpty {
+        targetContent = newString
+    } else {
+        var modifierLines: [String] = []
+        newString.enumerateLines { line, _ in
+            for toRemove in modifiers.toRemove {
+                if line.contains(toRemove) {
+                    return
+                }
+                modifierLines.append(line)
+            }
+        }
+        targetContent = modifierLines.joined(separator: "\n")
+    }
+}

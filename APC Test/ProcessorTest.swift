@@ -25,6 +25,7 @@ sth
     let toRead = """
 old
 text
+
 """
     let replaceWith = """
 new
@@ -37,7 +38,6 @@ sth
 [Proxy]
 new
 text
-
 [Proxy Group]
 fine
 text
